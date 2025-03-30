@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# 忽略 .mvn 文件夹（排除整个 Maven Wrapper）
+.mvn/
+mvnw
+mvnw.cmd
