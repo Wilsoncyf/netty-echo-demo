@@ -1,5 +1,6 @@
 package com.example.nettyechodemo.netty;
 
+import com.example.nettyechodemo.im.ImServerHandler;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
@@ -21,7 +22,7 @@ public class NettyServerInitializer extends ChannelInitializer<SocketChannel> {
 //        ch.pipeline().addLast(new EchoServerHandler());
         ch.pipeline().addLast(new MessageDecoder());
         ch.pipeline().addLast(new MessageEncoder());
-        ch.pipeline().addLast(new CustomMessageHandler()); // 处理 ChatMessage 对象
-
+//        ch.pipeline().addLast(new CustomMessageHandler()); // 处理 ChatMessage 对象
+        ch.pipeline().addLast(new ImServerHandler());
     }
 }

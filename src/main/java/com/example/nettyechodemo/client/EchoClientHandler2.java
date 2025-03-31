@@ -4,14 +4,14 @@ import com.example.nettyechodemo.netty.ChatMessage;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-public class EchoClientHandler extends SimpleChannelInboundHandler<ChatMessage> {
+public class EchoClientHandler2 extends SimpleChannelInboundHandler<ChatMessage> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         // 连接建立后，发送消息
         System.out.println("连接成功，发送消息中...");
-        ctx.writeAndFlush(new ChatMessage((byte) 1, "user1")); // 登录
-        ctx.writeAndFlush(new ChatMessage((byte) 2, "大家好！我是 user1")); // 聊天
+        ctx.writeAndFlush(new ChatMessage((byte) 1, "user2")); // 登录
+        ctx.writeAndFlush(new ChatMessage((byte) 2, "你好！我是 user2")); // 聊天
     }
 
     @Override
